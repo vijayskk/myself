@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-image: url(matrix.jpg);
+    color: #0f0;
+
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    height: 100vh; /* Full viewport height */
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.893);
+}
+
+.terminal {
+    width: 75%;            /* Adjusted width */
+    max-width: 100%;      /* Adjusted max width */
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.333);
+    height: 70%;         /* Adjusted height */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #666;
+    margin-right: 6px;
+}
+
+.red { background: red; }
+.yellow { background: yellow; }
+.green { background: green; }
+
+.output {
+    flex-grow: 1;
+    overflow-y: auto;
+    white-space: pre-wrap; /* Ensure whitespace and newlines are preserved */
+    animation: typing 3.5s steps(40, end);
+}
+
+
+.prompt {
+    display: inline;
+}
+
+.input {
+    background: black;
+    border: none;
+    color: #0f0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+    outline: none;
+    caret-color: #0f0;
+}
+
+.commands-index {
+    width: 25%;             /* Adjusted width */
+    max-width: 300px;       /* Adjusted max width */
+    padding: 20px;
+    border: 1px solid rgb(68, 68, 68);
+    border-radius: 5px;
+    background: black;
+}
+
+.commands-index h2 {
+    margin-top: 0;
+    color: #0f0;
+}
+
+.commands-index ul {
+    list-style: none;
+    padding: 0;
+}
+
+.commands-index li {
+    margin-bottom: 10px;
+    color: #0f0;
+}
+
+.typing-effect {
+    display: inline;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3.5s steps(40, end);
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@media (max-width: 768px) {    
+    .commands-index {
+        display: none;
+    }
+
+    .terminal {
+        height: calc(100vh - 200px); /* Adjust height to fit the view */
+    }
+    
+    .output {
+            font-size: 18px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            /* Ensure whitespace and newlines are preserved */
+        }
+
+    
+}
